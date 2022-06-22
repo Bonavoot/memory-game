@@ -1,0 +1,30 @@
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+  width: 95vw;
+}
+
+.container {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "card card card card"
+    "card card card card"
+    "card card card card";
+}
+
+.card {
+  grid-area: "card";
+  height: 280px;
+  width: 255px;
+  border: 1px black solid;
+  text-align: center;
+}

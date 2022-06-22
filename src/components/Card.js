@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
+import Scoreboard from "./Scoreboard";
 
 const Card = (props) => {
-  const [isClicked, setIsClicked] = useState({ clicked: false });
+  const [isClicked, setIsClicked] = useState(0);
 
-  const toggleClick = () => {};
   return (
-    <div
-      className="card"
-      onClick={() => {
-        setIsClicked({ clicked: true });
-      }}
-    >
-      0
+    <div>
+      <div
+        className="card"
+        onClick={() => {
+          setIsClicked(isClicked + 1);
+          console.log(isClicked);
+        }}
+      >
+        IMAGE
+      </div>
     </div>
   );
 };
