@@ -28,3 +28,53 @@ body {
   border: 1px black solid;
   text-align: center;
 }
+
+/*
+Card Colors
+*/
+.orange {
+  background-color: orange;
+}
+.yellow-orange {
+  background-color: rgb(255, 214, 100);
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.yellow-green {
+  background-color: yellowgreen;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue-green {
+  background-color: rgb(3, 87, 66);
+}
+
+.blue {
+  background-color: blue;
+}
+
+.blue-violet {
+  background-color: blueviolet;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.red-violet {
+  background-color: rgb(170, 29, 95);
+}
+
+.red {
+  background-color: red;
+}
+
+.red-orange {
+  background-color: rgb(161, 57, 16);
+}

@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const Scoreboard = ({ isClicked }) => {
+const Scoreboard = (props) => {
   const [currentScore, setCurrentScore] = useState(0);
-  console.log(isClicked);
-
-  useEffect(
-    () => {
-      if (isClicked === 2) {
-        setCurrentScore(0);
-      } else {
-        setCurrentScore(() => {
-          return currentScore + 1;
-        });
-      }
-    },
-    [isClicked],
-    [currentScore]
-  );
+  console.log(props.isClicked);
 
   const getBestScore = (currentScore) => {
     let bestScore = 0;
@@ -28,7 +14,7 @@ const Scoreboard = ({ isClicked }) => {
 
   return (
     <div>
-      <div className="score">Score: {currentScore}</div>
+      <div className="score">Score: {}</div>
       <div className="score best">Best: {getBestScore(currentScore)}</div>
     </div>
   );
