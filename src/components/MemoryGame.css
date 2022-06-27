@@ -36,11 +36,11 @@ Card Colors
   background-color: orange;
 }
 .yellow-orange {
-  background-color: rgb(255, 214, 100);
+  background-color: rgb(245, 207, 105);
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: rgb(255, 255, 0);
 }
 
 .yellow-green {

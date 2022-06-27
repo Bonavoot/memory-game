@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const Scoreboard = (props) => {
   const [currentScore, setCurrentScore] = useState(0);
-  console.log(props.isClicked);
 
   const getBestScore = (currentScore) => {
     let bestScore = 0;
