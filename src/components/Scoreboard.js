@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+let bestScore = 0;
 
 const Scoreboard = (props) => {
-  const [currentScore, setCurrentScore] = useState(0);
-
-  const getBestScore = (currentScore) => {
-    let bestScore = 0;
-    if (currentScore >= bestScore) {
-      bestScore = currentScore;
+  const getBestScore = () => {
+    if (props.turns >= bestScore) {
+      bestScore = props.turns;
     }
     return bestScore;
   };
 
   return (
-    <div>
-      <div className="score">Score: {}</div>
-      <div className="score best">Best: {getBestScore(currentScore)}</div>
+    <div className="scoreboard">
+      <div className="score">Score: {props.turns}</div>
+      <div className="score best">Best: {getBestScore(props.turn)}</div>
     </div>
   );
 };
