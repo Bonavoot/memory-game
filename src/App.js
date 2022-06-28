@@ -38,11 +38,7 @@ const App = (props) => {
       setTurns(0);
       setCards([]);
       showOrHide = { display: "block" };
-    } else if (turns === 12) {
-      setTurns(0);
-      setCards([]);
-      showOrHide = { display: "block" };
-    } else if (e.target.className !== "new-game") {
+    } else if (e.target.className !== "material-symbols-outlined") {
       checkWinner.push(e.target.className);
       setCards(shuffledCards);
       setTurns(turns + 1);
@@ -51,7 +47,6 @@ const App = (props) => {
     }
   };
 
-  console.log(cards, turns);
   return (
     <>
       <div className="header">
