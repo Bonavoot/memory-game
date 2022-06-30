@@ -65,56 +65,6 @@ body {
   box-shadow: 0px 0px 2px 2px rgb(238, 238, 238);
 }
 
-/*
-Card Colors
-*/
-.orange {
-  background-color: orange;
-}
-.yellow-orange {
-  background-color: rgb(245, 207, 105);
-}
-
-.yellow {
-  background-color: rgb(255, 255, 0);
-}
-
-.yellow-green {
-  background-color: yellowgreen;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue-green {
-  background-color: rgb(3, 87, 66);
-}
-
-.blue {
-  background-color: blue;
-}
-
-.blue-violet {
-  background-color: blueviolet;
-}
-
-.violet {
-  background-color: violet;
-}
-
-.red-violet {
-  background-color: rgb(170, 29, 95);
-}
-
-.red {
-  background-color: red;
-}
-
-.red-orange {
-  background-color: rgb(161, 57, 16);
-}
-
 .new-game {
   background-color: none;
   background: none;
@@ -129,4 +79,44 @@ Card Colors
 
 .material-symbols-outlined:hover {
   font-size: 95pt;
+}
+
+.info {
+  font-family: "Bebas Neue", cursive;
+  color: wheat;
+  position: absolute;
+  border: 2px black solid;
+  height: 425px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.219);
+  right: -35px;
+  top: 250px;
+  border-radius: 30%;
+}
+
+.info h2 {
+  color: yellow;
+  font-size: 38pt;
+  text-align: center;
+}
+
+.info ul {
+  margin-top: -10px;
+}
+
+.info li {
+  color: white;
+  font-size: 18pt;
+  width: 220px;
+  margin: 12px;
+}
+
+.info p {
+  color: yellow;
+  text-align: center;
+  font-size: 24pt;
+  margin-top: 5px;
 }
