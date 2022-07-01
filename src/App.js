@@ -3,6 +3,7 @@ import "./App.css";
 import Scoreboard from "./components/Scoreboard";
 import uniqid from "uniqid";
 import axios from "axios";
+import InfoIcon from "./InfoIcon";
 
 let showOrHide = { display: "block" };
 let renderOnPlay = false;
@@ -14,6 +15,7 @@ const App = (props) => {
   const [giphy, setGiphy] = useState([]);
   const [fetching, setFetching] = useState("false");
 
+  // Giphy API for random trending images
   useEffect(() => {
     const fetchData = async () => {
       const apiRoot = "https://api.giphy.com/v1/gifs/";
@@ -30,12 +32,13 @@ const App = (props) => {
   const shuffleImgs = (e) => {
     showOrHide = { display: "none" };
 
+    // Random sort with ID
     const shuffledImgs = [...imgArr]
       .sort(() => Math.random() - 0.5)
-      // .map gives each card object in array an id
       .map((url) => ({ ...url, id: uniqid() }));
     console.log(e.target.className);
 
+    // Game Logic
     if (checkWinner.includes(e.target.className)) {
       checkWinner = [];
       imgArr = [];
@@ -53,33 +56,19 @@ const App = (props) => {
     }
   };
 
-  // const shuffleCards = (e) => {
-  //   showOrHide = { display: "none" };
-
-  //   const shuffledCards = [...colorArr]
-  //     .sort(() => Math.random() - 0.5)
-  //     // .map gives each card object in array an id
-  //     .map((card) => ({ ...card, id: uniqid() }));
-  // };
-
   return (
     <div className="parent-container">
       <div className="header">
         <div className="logo">MEMORY GAME</div>
-        <Scoreboard turns={turns} />
+        <div className="header-right">
+          <InfoIcon />
+          <Scoreboard turns={turns} />
+        </div>
       </div>
       <button className="new-game" onClick={shuffleImgs} style={showOrHide}>
         <span className="material-symbols-outlined">play_circle</span>
       </button>
-      <div className="info">
-        <h2>How to Play</h2>
-        <ul>
-          <li>Click each image once</li>
-          <li>Pressing the same image twice resets the score</li>
-          <li>Win by scoring 12 points</li>
-        </ul>
-        <p>Good luck!</p>
-      </div>
+
       <div className="container">
         {renderOnPlay &&
           giphy.map((img) => (
