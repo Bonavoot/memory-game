@@ -10,8 +10,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 98vh;
-  width: 95vw;
+  height: 100vh;
+  width: 100vw;
+
+  margin: 0;
 }
 
 .header {
@@ -56,51 +58,55 @@ body {
   height: 250px;
   width: 225px;
   border: 1px black solid;
-  box-shadow: 0px 0px 4px 3px;
+  box-shadow: 0px 0px 4px 3px rgb(10, 10, 10);
   cursor: pointer;
+  border-radius: 50%;
 }
-
 .card:hover {
-  border: rgba(255, 255, 255, 0.747) 1px solid;
-  box-shadow: 0px 0px 2px 2px rgb(238, 238, 238);
+  box-shadow: 0px 0px 6px 8px rgba(214, 214, 99, 0.548);
 }
 
 .new-game {
-  background-color: none;
+  font-family: "Bebas Neue", cursive;
   background: none;
   border: none;
+  position: absolute;
+  top: 40%;
+  left: 45%;
 }
 
 .material-symbols-outlined {
-  color: green;
-  font-size: 100pt;
+  font-size: 125pt;
   cursor: pointer;
+  border-radius: 50%;
+  color: rgba(255, 255, 0, 0.699);
 }
 
 .material-symbols-outlined:hover {
-  font-size: 95pt;
+  background-color: rgba(255, 255, 104, 0.062);
+  box-shadow: 0px 0px 6px 8px rgb(214, 214, 99);
 }
 
 .info {
+  position: absolute;
+  top: 250px;
+  right: 50px;
   font-family: "Bebas Neue", cursive;
   color: wheat;
-  position: absolute;
-  border: 2px black solid;
-  height: 425px;
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.219);
-  right: -35px;
-  top: 250px;
-  border-radius: 30%;
+  border-radius: 25%;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.788);
 }
 
 .info h2 {
+  font-family: "Rubik Moonrocks", cursive;
   color: yellow;
-  font-size: 38pt;
+  font-size: 32pt;
   text-align: center;
+  border-bottom: rgba(0, 0, 0, 0.651) 4px solid;
+  padding: 0px 30px;
 }
 
 .info ul {
@@ -110,13 +116,17 @@ body {
 .info li {
   color: white;
   font-size: 18pt;
-  width: 220px;
-  margin: 12px;
+  width: 225px;
+  margin: 18px;
 }
 
 .info p {
+  border-top: 4px rgba(0, 0, 0, 0.651) solid;
+  padding: 0px 55px;
+  padding-top: 20px;
+  font-family: "Rubik Moonrocks", cursive;
   color: yellow;
   text-align: center;
-  font-size: 24pt;
+  font-size: 28pt;
   margin-top: 5px;
 }

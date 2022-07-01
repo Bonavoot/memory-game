@@ -63,13 +63,13 @@ const App = (props) => {
   // };
 
   return (
-    <>
+    <div className="parent-container">
       <div className="header">
         <div className="logo">MEMORY GAME</div>
         <Scoreboard turns={turns} />
       </div>
       <button className="new-game" onClick={shuffleImgs} style={showOrHide}>
-        <span class="material-symbols-outlined">play_circle</span>
+        <span className="material-symbols-outlined">play_circle</span>
       </button>
       <div className="info">
         <h2>How to Play</h2>
@@ -92,7 +92,7 @@ const App = (props) => {
             ></img>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 
