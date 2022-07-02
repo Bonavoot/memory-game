@@ -24,9 +24,9 @@ body {
   top: 0px;
   left: 0px;
   right: 0px;
-  background-color: rgb(100, 100, 100);
+  background-color: rgb(32, 32, 32);
+  box-shadow: 2px 0px 4px 4px;
   padding: 15px;
-  border-bottom: 3px black solid;
 }
 
 .logo {
@@ -59,7 +59,7 @@ body {
   color: white;
 }
 
-.container {
+.CLASSIC {
   display: grid;
   gap: 20px;
   grid-template-areas:
@@ -69,18 +69,81 @@ body {
   margin-top: 75px;
 }
 
-.card {
+.EXTREME {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "card card card card card card"
+    "card card card card card card"
+    "card  card card card card card ";
+
+  margin-top: 75px;
+}
+
+.card-CLASSIC {
   grid-area: "card";
   height: 250px;
-  width: 225px;
+  width: 250px;
   border: 1px black solid;
   box-shadow: 0px 0px 4px 3px rgb(10, 10, 10);
   cursor: pointer;
   border-radius: 50%;
 }
 
-.card:hover {
-  box-shadow: 0px 0px 6px 8px var(--main-yellow);
+.card-CLASSIC:hover {
+  box-shadow: 0px 0px 8px 2px var(--main-yellow);
+}
+
+.card-EXTREME {
+  grid-area: "card";
+  height: 180px;
+  width: 180px;
+  border: 1px black solid;
+  box-shadow: 0px 0px 4px 3px rgb(10, 10, 10);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.card-EXTREME:hover {
+  box-shadow: 0px 0px 8px 2px var(--main-yellow);
+}
+
+.CLASSIC-button {
+  font-size: 24px;
+  font-family: "Bebas Neue", cursive;
+  background: none;
+  background-color: rgb(83, 204, 83);
+  padding: 0px 35px 0px 35px;
+  border: none;
+  margin-right: 20px;
+  color: black;
+  border-bottom: solid black 5px;
+  border-left: solid black 5px;
+  box-shadow: 0px 2px 3px 2px;
+}
+
+.EXTREME-button {
+  font-size: 24px;
+  font-family: "Bebas Neue", cursive;
+  background: none;
+  background-color: rgb(207, 57, 57);
+  padding: 0px 30px 0px 30px;
+  border: none;
+  margin-right: 20px;
+  color: black;
+  border-bottom: solid black 5px;
+  border-left: solid black 5px;
+  box-shadow: 0px 2px 3px 2px;
+}
+
+.EXTREME-button:hover {
+  box-shadow: 0px 0px 0px 0px;
+  border: solid black 3px;
+}
+
+.CLASSIC-button:hover {
+  box-shadow: 0px 0px 0px 0px;
+  border: solid black 3px;
 }
 
 .new-game {
@@ -100,48 +163,51 @@ body {
 }
 
 .material-symbols-outlined:hover {
-  background-color: rgba(255, 255, 104, 0.062);
-  box-shadow: 0px 0px 6px 8px var(--main-yellow);
+  background-color: rgba(255, 255, 104, 0.048);
+  box-shadow: 0px 0px 4px 4px var(--main-yellow);
 }
 
 .info {
   position: absolute;
-  background-color: rgb(29, 29, 29);
+  background-color: rgb(100, 100, 100);
   top: 75px;
-  right: 300px;
+  right: 120px;
   font-family: "Bebas Neue", cursive;
   color: wheat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.788);
+  border: black solid 4px;
 }
 
 .info h2 {
   font-family: "Rubik Moonrocks", cursive;
   color: var(--main-yellow);
   font-size: 32pt;
-  text-align: center;
   border-bottom: rgba(0, 0, 0, 0.651) 4px solid;
-  padding: 0px 30px;
-}
-.info ul {
-  margin-top: -10px;
+  padding: 0px 15px 10px;
 }
 
 .info li {
-  color: white;
+  color: rgb(20, 20, 20);
   font-size: 18pt;
-  width: 225px;
-  margin: 18px;
+  text-align: center;
+  width: fit-content;
+  word-break: break-all;
+  width: 200px;
+  margin-left: -30px;
+  margin-bottom: 20px;
 }
 
 .info p {
-  padding: 0px 55px;
-  padding-top: 20px;
+  margin-top: -10px;
   font-family: "Rubik Moonrocks", cursive;
   color: var(--main-yellow);
   text-align: center;
   font-size: 28pt;
-  margin-top: 5px;
+}
+
+svg {
+  background-color: rgb(67, 126, 194);
+  border-radius: 50%;
 }

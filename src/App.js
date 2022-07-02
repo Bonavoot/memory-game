@@ -14,6 +14,8 @@ const App = (props) => {
   const [turns, setTurns] = useState(0);
   const [giphy, setGiphy] = useState([]);
   const [fetching, setFetching] = useState("false");
+  const [hardMode, setHardMode] = useState(12);
+  const [toggleHardMode, setToggleHardMode] = useState("CLASSIC");
 
   // Giphy API for random trending images
   useEffect(() => {
@@ -22,12 +24,29 @@ const App = (props) => {
       const api_key = process.env.REACT_APP_GIPHY_KEY;
       const result = await axios(`${apiRoot}trending?api_key=${api_key}`);
       imgArr = [];
-      for (let i = 0; i < 12; i++) {
+      for (let i = 0; i < hardMode; i++) {
         imgArr.push({ src: `${result.data.data[i].images.fixed_height.url}` });
       }
     };
     fetchData();
-  }, [fetching]);
+  }, [fetching, hardMode]);
+
+  const handleHardModeClick = (e) => {
+    if (toggleHardMode === "CLASSIC") {
+      setToggleHardMode("EXTREME");
+      setHardMode(24);
+    } else if (toggleHardMode === "EXTREME") {
+      setToggleHardMode("CLASSIC");
+      setHardMode(12);
+    }
+    checkWinner = [];
+    imgArr = [];
+    renderOnPlay = false;
+    setTurns(0);
+    setFetching(!fetching);
+    showOrHide = { display: "block" };
+  };
+  console.log(hardMode);
 
   const shuffleImgs = (e) => {
     showOrHide = { display: "none" };
@@ -36,7 +55,6 @@ const App = (props) => {
     const shuffledImgs = [...imgArr]
       .sort(() => Math.random() - 0.5)
       .map((url) => ({ ...url, id: uniqid() }));
-    console.log(e.target.className);
 
     // Game Logic
     if (checkWinner.includes(e.target.className)) {
@@ -61,6 +79,12 @@ const App = (props) => {
       <div className="header">
         <div className="logo">MEMORY GAME</div>
         <div className="header-right">
+          <button
+            className={toggleHardMode + "-button"}
+            onClick={handleHardModeClick}
+          >
+            {toggleHardMode}
+          </button>
           <InfoIcon />
           <Scoreboard turns={turns} />
         </div>
@@ -69,11 +93,11 @@ const App = (props) => {
         <span className="material-symbols-outlined">play_circle</span>
       </button>
 
-      <div className="container">
+      <div className={toggleHardMode}>
         {renderOnPlay &&
           giphy.map((img) => (
             <img
-              className={`card ${img.src}`}
+              className={`card-${toggleHardMode} ${img.src}`}
               src={img.src}
               alt="randomGiphyImg"
               key={uniqid()}
