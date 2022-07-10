@@ -28,9 +28,9 @@ const InfoIcon = () => {
         <div className="info">
           <h2>How to Play</h2>
           <ul>
-            <li>Click each image once</li>
-            <li>Pressing the same image twice resets the score</li>
-            <li>Win by scoring 12 points</li>
+            <li>- Click each image once</li>
+            <li>- Pressing the same image twice resets the score</li>
+            <li>- Win by scoring 12 points</li>
           </ul>
           <p>Good luck!</p>
         </div>

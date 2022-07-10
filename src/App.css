@@ -33,6 +33,7 @@ body {
   font-family: "Rubik Moonrocks", cursive;
   font-size: 30pt;
   color: var(--main-yellow);
+  min-width: fit-content;
 }
 
 .header-right {
@@ -108,8 +109,10 @@ body {
   box-shadow: 0px 0px 8px 2px var(--main-yellow);
 }
 
-.CLASSIC-button {
+.CLASSIC-button,
+.EXTREME-button {
   font-size: 24px;
+  cursor: pointer;
   font-family: "Bebas Neue", cursive;
   background: none;
   background-color: rgb(83, 204, 83);
@@ -123,24 +126,12 @@ body {
 }
 
 .EXTREME-button {
-  font-size: 24px;
-  font-family: "Bebas Neue", cursive;
-  background: none;
   background-color: rgb(207, 57, 57);
   padding: 0px 30px 0px 30px;
-  border: none;
   margin-right: 20px;
-  color: black;
-  border-bottom: solid black 5px;
-  border-left: solid black 5px;
-  box-shadow: 0px 2px 3px 2px;
 }
 
-.EXTREME-button:hover {
-  box-shadow: 0px 0px 0px 0px;
-  border: solid black 3px;
-}
-
+.EXTREME-button:hover,
 .CLASSIC-button:hover {
   box-shadow: 0px 0px 0px 0px;
   border: solid black 3px;
@@ -171,7 +162,7 @@ body {
   position: absolute;
   background-color: rgb(100, 100, 100);
   top: 75px;
-  right: 120px;
+  right: 320px;
   font-family: "Bebas Neue", cursive;
   color: wheat;
   display: flex;
@@ -189,18 +180,16 @@ body {
 }
 
 .info li {
-  color: rgb(20, 20, 20);
+  color: white;
+  list-style: none;
   font-size: 18pt;
-  text-align: center;
   width: fit-content;
-  word-break: break-all;
-  width: 200px;
-  margin-left: -30px;
+  width: 250px;
   margin-bottom: 20px;
 }
 
 .info p {
-  margin-top: -10px;
+  margin-top: -5px;
   font-family: "Rubik Moonrocks", cursive;
   color: var(--main-yellow);
   text-align: center;
@@ -210,4 +199,24 @@ body {
 svg {
   background-color: rgb(67, 126, 194);
   border-radius: 50%;
+}
+svg:hover {
+  background-color: rgb(136, 191, 255);
+
+  box-shadow: 0px 0px 2px 3px;
+}
+
+div > .winner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 85px;
+  background-color: rgba(0, 0, 0, 0.89);
+  width: 100vw;
+  height: 100vh;
+}
+
+.winner {
 }
